@@ -7,7 +7,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Top <?= $i + 1; ?> - Lovely Runner</h5>
+                    <h5 class="card-title">Top <?= $i + 1; ?> - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Senin - Lovely Runner</h5>
+                    <h5 class="card-title">Senin - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - Lovely Runner</h5>
+                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - Lovely Runner</h5>
+                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - Lovely Runner</h5>
+                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
