@@ -20,9 +20,14 @@ class VideoSeeder extends Seeder
         array_push($data, getVideo('Hangout with Yoo', category: 'Variety'));
         array_push($data, getVideo('One Piece'));
         array_push($data, getVideo('My Sweet Mobster', rating: 9.4));
+        array_push($data, getVideo('Urban Horror', '2024/7/19'));
+        array_push($data, getVideo('Fresh off the Sea', '2024/7/20'));
+        array_push($data, getVideo('Dead Man', '2024/7/21'));
+        array_push($data, getVideo('The Tiger', '2024/7/28'));
+        array_push($data, getVideo('The King', '2024/7/28'));
         $faker = \Faker\Factory::create('id_ID');
-        for ($i = 0; $i < 20; $i++) {
-            array_push($data, getVideo($faker->sentence(2), $faker->date('Y/m/d'), category: $faker->randomElement(['Series', 'Variety']), rating: $faker->randomFloat(1, 0, 10)));
+        for ($i = 0; $i < 100; $i++) {
+            array_push($data, getVideo($faker->sentence(2), $faker->date('Y/m/d'), category: $faker->randomElement(['Series', 'Variety', 'Romance']), rating: $faker->randomFloat(1, 0, 10)));
         }
         $this->db->table('videos')->insertBatch($data);
     }

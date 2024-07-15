@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><?= $video['title'] ?></h5>
-                    <h6 class="card-subtitle text-secondary">Drama Korea</h6>
+                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
                 </div>
             </div>
         </div>
@@ -21,58 +21,58 @@
 </div>
 <div class="row mb-3 justify-content-center" id="seriesNewEpisode">
     <h1>Episode Baru Series</h1>
-    <?php for ($i = 0; $i < 8; $i++) : ?>
+    <?php foreach ($seriesVideos as $series) : ?>
         <div class="col-md-3 mb-3">
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($videos[$i]['release']))); ?> - <?= $videos[$i]['title']; ?> - Ep <?= $videos[$i]['episode']; ?></h5>
-                    <h6 class="card-subtitle text-secondary">Drama Korea</h6>
+                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($series['release']))); ?> - <?= $series['title']; ?> - Ep <?= $series['episode']; ?></h5>
+                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
                 </div>
             </div>
         </div>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 <div class="row mb-3 justify-content-center" id="varietyNewEpisode">
     <h1>Episode Baru Variety</h1>
-    <?php for ($i = 0; $i < 4; $i++) : ?>
+    <?php foreach ($varietyVideos as $variety) : ?>
         <div class="col-md-3 mb-3">
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($videos[$i]['release']))); ?> - <?= $videos[$i]['title']; ?> - Ep <?= $videos[$i]['episode']; ?></h5>
-                    <h6 class="card-subtitle text-secondary">Drama Korea</h6>
+                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($variety['release']))); ?> - <?= $variety['title']; ?> - Ep <?= $variety['episode']; ?></h5>
+                    <h6 class="card-subtitle text-secondary">Korean Variety</h6>
                 </div>
             </div>
         </div>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 <div class="row mb-3 justify-content-center" id="comingsoon">
     <h1>Segera Tayang</h1>
-    <?php for ($i = 0; $i < 4; $i++) : ?>
+    <?php foreach ($upcomingVideos as $video) : ?>
         <div class="col-md-3 mb-3">
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - <?= $videos[$i]['title'] ?></h5>
-                    <h6 class="card-subtitle text-secondary">Drama Korea</h6>
+                    <h5 class="card-title"><?= date('d M', strtotime($video['release'])); ?> - <?= $video['title'] ?> - Ep 0</h5>
+                    <h6 class="card-subtitle text-secondary">Trailers</h6>
                 </div>
             </div>
         </div>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
-<div class="row mb-3 justify-content-center" id="comingsoon">
+<div class="row mb-3 justify-content-center" id="romanceDrama">
     <h1>Drama Romantis</h1>
-    <?php for ($i = 0; $i < 8; $i++) : ?>
+    <?php foreach ($romanceVideos as $video) : ?>
         <div class="col-md-3 mb-3">
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - <?= $videos[$i]['title']; ?></h5>
-                    <h6 class="card-subtitle text-secondary">Drama Korea</h6>
+                    <h5 class="card-title"><?= $video['title']; ?> - Ep 1</h5>
+                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
                 </div>
             </div>
         </div>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 <?= $this->endSection(); ?>
