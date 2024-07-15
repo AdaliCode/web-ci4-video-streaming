@@ -15,7 +15,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Arix',
-            'videos' => $this->videomodel->findAll()
+            'videos' => $this->videomodel->orderBy('rating', 'desc')->findAll()
         ];
         return view('home', $data);
     }

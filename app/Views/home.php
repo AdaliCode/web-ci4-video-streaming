@@ -7,7 +7,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Top <?= $i + 1; ?> - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
+                    <h5 class="card-title">Top <?= $i + 1; ?> - <?= $videos[$i]['title'] ?> - <?= $videos[$i]['rating'] ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
