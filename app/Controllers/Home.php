@@ -15,7 +15,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Arix',
-            'videos' => $this->videomodel->orderBy('rating', 'desc')->findAll()
+            'videos' => $this->videomodel->orderBy('rating', 'desc')->paginate(10)
         ];
         return view('home', $data);
     }

@@ -28,6 +28,9 @@ class Video extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'episode' => [
+                'type' => 'INT',
+            ],
             'rating' => [
                 'type' => 'FLOAT',
             ],
