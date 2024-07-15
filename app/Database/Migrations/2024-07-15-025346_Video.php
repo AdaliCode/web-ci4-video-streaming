@@ -24,9 +24,16 @@ class Video extends Migration
                 'constraint' => '255',
                 'unique'     => true
             ],
+            'category' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'description' => [
                 'type' => 'TEXT',
                 'null' => true,
+            ],
+            'release' => [
+                'type' => 'DATETIME',
             ],
             'episode' => [
                 'type' => 'INT',

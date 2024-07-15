@@ -26,7 +26,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Senin - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
+                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($videos[$i]['release']))); ?> - <?= $videos[$i]['title']; ?> - Ep <?= $videos[$i]['episode']; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
+                    <h5 class="card-title"><?= hari_apa(date('D', strtotime($videos[$i]['release']))); ?> - <?= $videos[$i]['title']; ?> - Ep <?= $videos[$i]['episode']; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
+                    <h5 class="card-title">Sabtu - <?= $videos[$i]['title'] ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
@@ -68,7 +68,7 @@
             <div class="card">
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Sabtu - <?= (isset($videos[$i]['title'])) ? $videos[$i]['title'] : "One Piece episode-" . $i . "00"; ?></h5>
+                    <h5 class="card-title">Sabtu - <?= $videos[$i]['title']; ?></h5>
                     <h6 class="card-subtitle text-secondary">Drama Korea</h6>
                 </div>
             </div>
