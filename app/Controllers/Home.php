@@ -14,14 +14,15 @@ class Home extends BaseController
     }
     public function index()
     {
-        // return var_dump($this->videomodel->where('category', 'Variety')->paginate(8));
+        // return var_dump($this->videomodel->select(['videos.*', 'GROUP_CONCAT(categories.name) as all_categories'])->join('video_categories', 'videos.id = video_categories.video_id', 'inner')->join('categories', 'categories.id = video_categories.category_id', 'inner')->groupBy('videos.title')->where('categories.name', 'Korean Dramas')->paginate(8));
+
         $data = [
             'title' => 'Arix',
-            'videos' => $this->videomodel->where('release <=', Time::now())->orderBy('rating', 'desc')->paginate(10),
-            'seriesVideos' => $this->videomodel->where('category', 'Series')->where('release <=', Time::now())->paginate(8),
-            'varietyVideos' => $this->videomodel->where('category', 'Variety')->where('release <=', Time::now())->paginate(4),
-            'romanceVideos' => $this->videomodel->where('category', 'Romance')->where('release <=', Time::now())->paginate(4),
-            'upcomingVideos' => $this->videomodel->where('release >', Time::now())->paginate(4),
+            'top10Videos' => $this->videomodel->videoCategories()->where('release <=', Time::now())->orderBy('rating', 'desc')->paginate(10),
+            'seriesVideos' => $this->videomodel->videoCategories('Korean Dramas')->where('release <=', Time::now())->paginate(8),
+            'varietyVideos' => $this->videomodel->videoCategories('Korean Variety')->where('release <=', Time::now())->paginate(4),
+            'romanceVideos' => $this->videomodel->videoCategories('Romance')->where('release <=', Time::now())->paginate(4),
+            'upcomingVideos' => $this->videomodel->videoCategories()->where('release >', Time::now())->paginate(4),
         ];
         return view('home', $data);
     }

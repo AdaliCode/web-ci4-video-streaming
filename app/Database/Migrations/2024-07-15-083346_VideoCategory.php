@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Video extends Migration
+class VideoCategory extends Migration
 {
     public function up()
     {
@@ -15,27 +15,15 @@ class Video extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'title' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
+            'video_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11,
             ],
-            'slug' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-                'unique'     => true
-            ],
-            'description' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-            'release' => [
-                'type' => 'DATETIME',
-            ],
-            'episode' => [
-                'type' => 'INT',
-            ],
-            'rating' => [
-                'type' => 'FLOAT',
+            'category_id' => [
+                'unsigned'   => true,
+                'constraint' => 11,
+                'type'       => 'INT',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -47,11 +35,13 @@ class Video extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('videos');
+        $this->forge->addForeignKey('video_id', 'videos', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('category_id', 'categories', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('video_categories');
     }
 
     public function down()
     {
-        $this->forge->dropTable('videos');
+        $this->forge->dropTable('video_categories');
     }
 }

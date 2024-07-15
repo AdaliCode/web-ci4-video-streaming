@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <div class="row mb-3 justify-content-center" id="top10">
     <h1>Top 10</h1>
-    <?php foreach ($videos as $key => $video) : ?>
+    <?php foreach ($top10Videos as $key => $video) : ?>
         <div class="col-md-3 mb-3">
             <div class="card h-100">
                 <div id="videoRank">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><?= $video['title'] ?></h5>
-                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
+                    <h6 class="card-subtitle text-secondary"><?= explode(',', $video['all_categories'])[0]; ?></h6>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= hari_apa(date('D', strtotime($series['release']))); ?> - <?= $series['title']; ?> - Ep <?= $series['episode']; ?></h5>
-                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
+                    <h6 class="card-subtitle text-secondary"><?= explode(',', $series['all_categories'])[0]; ?></h6>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= hari_apa(date('D', strtotime($variety['release']))); ?> - <?= $variety['title']; ?> - Ep <?= $variety['episode']; ?></h5>
-                    <h6 class="card-subtitle text-secondary">Korean Variety</h6>
+                    <h6 class="card-subtitle text-secondary"><?= explode(',', $variety['all_categories'])[0]; ?></h6>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <img src="cover.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= $video['title']; ?> - Ep 1</h5>
-                    <h6 class="card-subtitle text-secondary">Korean Dramas</h6>
+                    <h6 class="card-subtitle text-secondary"><?= explode(',', $video['all_categories'])[0]; ?></h6>
                 </div>
             </div>
         </div>
