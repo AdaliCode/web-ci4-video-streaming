@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Video extends Migration
+class Episode extends Migration
 {
     public function up()
     {
@@ -15,6 +15,11 @@ class Video extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'video_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11,
+            ],
             'title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -22,7 +27,6 @@ class Video extends Migration
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
-                'unique'     => true
             ],
             'description' => [
                 'type' => 'TEXT',
@@ -44,11 +48,12 @@ class Video extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('videos');
+        $this->forge->addForeignKey('video_id', 'videos', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('episodes');
     }
 
     public function down()
     {
-        $this->forge->dropTable('videos');
+        $this->forge->dropTable('episodes');
     }
 }

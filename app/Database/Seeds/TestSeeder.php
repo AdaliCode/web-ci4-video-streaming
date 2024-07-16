@@ -11,6 +11,7 @@ class TestSeeder extends Seeder
     {
         $this->call('CategorySeeder');
         $this->call('VideoSeeder');
+        $this->call('EpisodeSeeder');
         $data = [];
         function getVideoCategory($video_id, $category_id)
         {

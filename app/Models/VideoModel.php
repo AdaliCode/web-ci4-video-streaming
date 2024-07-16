@@ -11,9 +11,11 @@ class VideoModel extends Model
 
     public function videoCategories($category = false)
     {
+        $this->table('videos')->select(['videos.*', 'GROUP_CONCAT(DISTINCT categories.name) as all_categories', 'GROUP_CONCAT(DISTINCT episodes.title) as all_episodes'])->join('episodes', 'videos.id = episodes.video_id', 'inner')->join('video_categories', 'videos.id = video_categories.video_id', 'inner')->join('categories', 'categories.id = video_categories.category_id', 'inner');
+        // $this->table('videos')->select(['videos.*', 'GROUP_CONCAT(categories.name) as all_categories'])->join('video_categories', 'videos.id = video_categories.video_id', 'inner')->join('categories', 'categories.id = video_categories.category_id', 'inner');
         if ($category == false) {
-            return $this->table('videos')->select(['videos.*', 'GROUP_CONCAT(categories.name) as all_categories'])->join('video_categories', 'videos.id = video_categories.video_id', 'inner')->join('categories', 'categories.id = video_categories.category_id', 'inner')->groupBy('videos.title');
+            return $this->groupBy('videos.title');
         }
-        return $this->table('videos')->select(['videos.*', 'GROUP_CONCAT(categories.name) as all_categories'])->join('video_categories', 'videos.id = video_categories.video_id', 'inner')->join('categories', 'categories.id = video_categories.category_id', 'inner')->where('categories.name', $category)->groupBy('videos.title');
+        return $this->where('categories.name', $category)->groupBy('videos.title');
     }
 }
