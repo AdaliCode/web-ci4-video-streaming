@@ -28,9 +28,6 @@ class Video extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'release' => [
-                'type' => 'DATETIME',
-            ],
             'rating' => [
                 'type' => 'FLOAT',
             ],
