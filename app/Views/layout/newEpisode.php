@@ -1,6 +1,5 @@
 <?php $categoryNewEpisode = [['categoryName' => 'Series', 'categoryData' => $seriesVideos], ['categoryName' => 'Variety', 'categoryData' => $varietyVideos]]; ?>
 <?php for ($i = 0; $i < count($categoryNewEpisode); $i++) : ?>
-    ?>
     <div class="row mb-3 justify-content-center">
         <h1>Episode Baru <?= $categoryNewEpisode[$i]['categoryName']; ?></h1>
         <?php foreach ($categoryNewEpisode[$i]['categoryData'] as $video) : ?>

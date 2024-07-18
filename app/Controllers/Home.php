@@ -14,16 +14,10 @@ class Home extends BaseController
     }
     public function index()
     {
-        $videoAll = $this->videomodel->videoCategories();
-        // foreach ($videoAll->findAll() as $key => $value) {
-        //     foreach (explode(',', $value["all_episodes_release"]) as $key => $episode_release) {
-        //         return var_dump($episode_release);
-        //     }
-        // }
         $data = [
             'title' => 'Arix',
-            'top10Videos' => $videoAll->orderBy('videos.rating', 'desc')->paginate(10),
-            // 'upcomingVideos' => $this->videomodel->videoCategories(comingSoon: true)->paginate(4),
+            'top10Videos' => $this->videomodel->videoCategories()->orderBy('videos.rating', 'desc')->paginate(10),
+            'upcomingVideos' => $this->videomodel->videoCategories(upcoming: true)->paginate(4),
             'seriesVideos' => $this->videomodel->videoCategories('Korean Dramas')->paginate(8),
             'varietyVideos' => $this->videomodel->videoCategories('Korean Variety')->paginate(4),
             'romanceVideos' => $this->videomodel->videoCategories('Romance')->paginate(4),

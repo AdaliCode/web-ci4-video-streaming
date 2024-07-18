@@ -20,7 +20,7 @@ class DetailVideoSeeder extends Seeder
         array_push($videoEpisode, $getVideoEpisode(3, '571'), $getVideoEpisode(3, '572')); // Hangout With Yoo
         // ----------------------------------------------------------------------------------------
         // Dramas
-        for ($i = 6; $i < 10; $i++) {
+        for ($i = 6; $i <= 11; $i++) {
             array_push($videoCategory, $getVideoCategory($i, 2)); // Drama
         }
         array_push($videoEpisode, $getVideoEpisode(6, '16', '2024/7/19'));
@@ -28,6 +28,10 @@ class DetailVideoSeeder extends Seeder
         array_push($videoEpisode, $getVideoEpisode(8, '16', '2024/7/21'));
         array_push($videoEpisode, $getVideoEpisode(9, '16', '2024/7/28'));
         array_push($videoEpisode, $getVideoEpisode(10, '16', '2024/7/28'));
+        array_push($videoEpisode, $getVideoEpisode(11, '3', '2020/9/3'));
+        for ($i = 4; $i <= 8; $i++) {
+            array_push($videoEpisode, $getVideoEpisode(11, $i, date('Y/m/d', strtotime("2020/9/3 +" . $i - 3 . "week"))));
+        }
         // ----------------------------------------------------------------------------------------
         // Romance Dramas
         array_push($videoCategory, $getVideoCategory(2, 2), $getVideoCategory(2, 3));

@@ -24,7 +24,8 @@ class VideoSeeder extends Seeder
         array_push($data, getVideo('Fresh off the Sea'));
         array_push($data, getVideo('Dead Man'));
         array_push($data, getVideo('The Tiger'));
-        array_push($data, getVideo('The King'));
+        array_push($data, getVideo('The King')); // 10
+        array_push($data, getVideo('The Boys Season 2'));
         $this->db->table('videos')->insertBatch($data);
     }
 }
