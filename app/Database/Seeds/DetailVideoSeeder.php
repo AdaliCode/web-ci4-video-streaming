@@ -16,8 +16,8 @@ class DetailVideoSeeder extends Seeder
         // ----------------------------------------------------------------------------------------
         // Variety
         array_push($videoCategory, $getVideoCategory(1, 1), $getVideoCategory(3, 1)); // variety
-        array_push($videoEpisode, $getVideoEpisode(1, '1'), $getVideoEpisode(1, '2')); // Mom's Diary
-        array_push($videoEpisode, $getVideoEpisode(3, '571'), $getVideoEpisode(3, '572')); // Hangout With Yoo
+        array_push($videoEpisode, $getVideoEpisode(1, '1'), $getVideoEpisode(1, '2', date('Y/m/d', strtotime("2024/7/16 +1week")))); // Mom's Diary
+        array_push($videoEpisode, $getVideoEpisode(3, '571'), $getVideoEpisode(3, '572', date('Y/m/d', strtotime("2024/7/16 +1week")))); // Hangout With Yoo
         // ----------------------------------------------------------------------------------------
         // Dramas
         for ($i = 6; $i <= 11; $i++) {

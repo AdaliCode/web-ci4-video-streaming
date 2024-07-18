@@ -24,4 +24,14 @@ class Home extends BaseController
         ];
         return view('home', $data);
     }
+
+    public function detailVideo($slug)
+    {
+        $video = $this->videomodel->videoCategories()->where('videos.slug', $slug)->first();
+        $data = [
+            'title' => $video['title'] . ' | ' . $video['all_categories'],
+            'videoDetail' => $video
+        ];
+        return view('detailVideo', $data);
+    }
 }
